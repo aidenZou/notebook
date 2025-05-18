@@ -2,8 +2,8 @@
 
 一款支持自部署的个人知识写作应用，助你更高效地组织和管理笔记。
 
-- [iNotebook Sandbox](https://inotebook-sandbox.vercel.app)
-- [iNotebook Docker Hub](https://hub.docker.com/r/aidenzou/i-notebook)
+- iNotebook 在线沙盒体验：[https://inotebook-sandbox.vercel.app](https://inotebook-sandbox.vercel.app)
+- iNotebook Docker Hub：[https://hub.docker.com/r/aidenzou/i-notebook](https://hub.docker.com/r/aidenzou/i-notebook)
 
 ## 功能描述
 
