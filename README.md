@@ -40,7 +40,7 @@ Chrome open: [http://localhost:4000⁠](http://localhost:4000⁠)
 
 | 环境变量 | 描述 |
 | ---- | ---- |
-| DATABASE_PATH | sqlite 文件地址 |
+| DATABASE_URL | sqlite 文件地址 |
 | AUTH_UNLOCKCODE | 解锁密码 |
 | SITE_URL | 部署后服务访问地址 |
 
