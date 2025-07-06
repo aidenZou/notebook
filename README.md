@@ -23,18 +23,49 @@
 
 除此之外，基于笔记地图对接第三方产品，让数据高效流转，快速搭建本地个人知识库
 
-## 如何部署
+## 部署
 
-Docker Hub：[iNotebook](https://hub.docker.com/r/aidenzou/i-notebook)
+### 方式一：Volume + Docker
 
-### Deploy
+1.创建 volume：
 
-```shell
-docker pull aidenzou/i-notebook
-docker run -d --name i-note -p 4000:3000 aidenzou/i-notebook
+```
+docker volume create note_data
 ```
 
-Chrome open: [http://localhost:4000⁠](http://localhost:4000⁠)
+2.创建容器并关联 volume
+
+```
+docker run -d -it -v note_data:/appdata -e DATABASE_URL=file:/appdata/db/notebook.sqlite -e AUTH_UNLOCKCODE=pass --name i-notebook -p 4000:3000 aidenzou/i-notebook:latest
+```
+
+说明：使用 `note_data` volume，数据库文件地址为 `note_data/db/notebook.sqlite`，锁屏密码为 `pass`
+
+### 方式二：Docker Compose
+
+1.docker-compose.yaml：
+
+```yarm
+name: inotebook
+services:
+  note:
+    image: aidenzou/i-notebook:0.9.0
+    ports:
+      - 4001:3000
+    volumes:
+      - ./notebook/data:/appdata
+      - ./notebook/uploads:/app/uploads
+    environment:
+      DATABASE_URL: file:/appdata/database.sqlite
+      AUTH_UNLOCKCODE: pass
+      SITE_URL: http://localhost:4001
+```
+
+2.在后台启动并运行容器应用：
+
+```shell
+docker-compose up -d
+```
 
 ### ENV
 
