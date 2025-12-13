@@ -4,6 +4,7 @@
 
 - iNotebook 在线沙盒体验：[https://inotebook-sandbox.vercel.app](https://inotebook-sandbox.vercel.app)
 - iNotebook Docker Hub：[https://hub.docker.com/r/aidenzou/i-notebook](https://hub.docker.com/r/aidenzou/i-notebook)
+- [更新日志](./CHANGELOG.md)
 
 ## 功能描述
 
